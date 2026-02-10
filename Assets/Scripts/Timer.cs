@@ -3,11 +3,7 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
-    
-    void Start()
-    {
-
-    }
+   
 
     public TextMeshProUGUI timerText;
     public float timer = 5;

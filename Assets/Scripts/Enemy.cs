@@ -16,4 +16,5 @@ public class Enemy : MonoBehaviour
         Vector3 move = Vector3.MoveTowards(transform.position, Target.transform.position, 0.1f);
         RB.MovePosition(move); 
     }
+
 }

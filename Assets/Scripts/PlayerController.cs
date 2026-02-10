@@ -11,7 +11,16 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         RB = GetComponent<Rigidbody2D>();
+
+        GameManager.Instance.Player.Add(this);
+
     }
+
+    private void OnDestroy()
+    {
+        GameManager.Instance.Player.Remove(this);
+    }
+
 
     void Update()
     {
@@ -21,6 +30,8 @@ public class PlayerController : MonoBehaviour
         Vector2 direction = new Vector2 (xInput, yInput);
         RB.linearVelocity = direction * speed;
 
+
+        
     }
     private void OnCollisionEnter2D(Collision2D other)
     {

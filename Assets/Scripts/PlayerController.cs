@@ -3,38 +3,20 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public Rigidbody2D RB;
-    public float Speed = 5;
+    public float speed = 5;
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
-        Vector2 vel = new Vector2(0, 0);
+        float xInput = Input.GetAxis("Horizontal");
+        float yInput = Input.GetAxis("Vertical");
 
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            vel.x = Speed;
-        }
+        Vector2 direction = new Vector2 (xInput, yInput);
+        RB.linearVelocity = direction * speed;
 
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            vel.x = -Speed;
-        }
 
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            vel.x = Speed;
-            vel.x = Speed;
-        }
-
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            vel.y = -Speed;
-        }
-
-        RB.linearVelocity = new Vector2(vel.x, RB.linearVelocity.y);
     }
 }

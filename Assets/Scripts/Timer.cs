@@ -3,7 +3,7 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
     void Start()
     {
 
@@ -13,7 +13,7 @@ public class Timer : MonoBehaviour
     public float timer = 5;
     public GameObject EnemyPrefab;
 
-    // Update is called once per frame
+  
     void Update()
     {
         timer -= Time.deltaTime;

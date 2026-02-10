@@ -4,9 +4,13 @@ public class PlayerController : MonoBehaviour
 {
     public Rigidbody2D RB;
     public float speed = 5;
+
+    public GameObject BulletPrefab;
+    public float bulletSpeed = 10f;
+
     void Start()
     {
-        
+        RB = GetComponent<Rigidbody2D>();
     }
 
     void Update()

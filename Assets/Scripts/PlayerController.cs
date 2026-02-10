@@ -17,6 +17,17 @@ public class PlayerController : MonoBehaviour
         Vector2 direction = new Vector2 (xInput, yInput);
         RB.linearVelocity = direction * speed;
 
+    }
+    private void OnCollisionEnter2D(Collision2D other)
+    {
 
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            Die();
+        }
+    }
+        public void Die()
+    {
+        Destroy(gameObject);
     }
 }

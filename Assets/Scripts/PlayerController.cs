@@ -7,10 +7,15 @@ public class PlayerController : MonoBehaviour
 
     public GameObject BulletPrefab;
     public float bulletSpeed = 10f;
+    public Transform SpawnPoint;
+
+    Animator anim;
+    public bool moving;
 
     void Start()
     {
         RB = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
 
         GameManager.Instance.Player.Add(this);
 
@@ -30,8 +35,10 @@ public class PlayerController : MonoBehaviour
         Vector2 direction = new Vector2 (xInput, yInput);
         RB.linearVelocity = direction * speed;
 
-
-        
+       if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Shoot();
+        }
     }
     private void OnCollisionEnter2D(Collision2D other)
     {
@@ -45,4 +52,10 @@ public class PlayerController : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    public void Shoot()
+    {
+        GameObject Bullet = Instantiate(BulletPrefab);
+    }
+        
 }

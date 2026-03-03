@@ -482,6 +482,8 @@ MonoBehaviour:
   speed: 5
   BulletPrefab: {fileID: 3406520024979024936, guid: 9dd4932044fe11b428781d38d6982ade, type: 3}
   bulletSpeed: 10
+  SpawnPoint: {fileID: 826677782}
+  moving: 0
 --- !u!61 &826677784
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -582,7 +584,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
